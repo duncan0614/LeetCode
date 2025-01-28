@@ -10,16 +10,16 @@ class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
 
-        unordered_map<int, int> countNums;
-        int longest  = 0;
+        unordered_map<int, int> countLongest;
+        int longest = 0;
 
-        for (int num : nums){
+        for(int num : nums){
 
-            if (!countNums[num]){
-                countNums[num] = countNums[num - 1] + countNums[num + 1] + 1;
-                countNums[num - countNums[num - 1]] = countNums[num];
-                countNums[num + countNums[num + 1]] = countNums[num];
-                longest = max(longest, countNums[num]);
+            if(!countLongest[num]){
+                countLongest[num] = countLongest[num - 1] + countLongest[num + 1] + 1;
+                countLongest[num - countLongest[num - 1]] = countLongest[num];
+                countLongest[num + countLongest[num + 1]] = countLongest[num];
+                longest = max(longest, countLongest[num]);
             }
         }
 
@@ -31,7 +31,7 @@ int main() {
     Solution solution;
 
     // Test input
-    vector<int> nums = {2,20,4,10,3,4,5};
+    vector<int> nums = {100, 4, 200, 1, 3, 2};
 
     // Call the function
     int result = solution.longestConsecutive(nums);

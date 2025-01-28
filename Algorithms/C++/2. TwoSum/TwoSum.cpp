@@ -5,20 +5,18 @@ using namespace std;
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        unordered_map <int, int> numbers;
+        unordered_map<int, int> numMap;
 
         for(int i = 0; i < nums.size(); i++){
-            numbers[nums[i]] = i;
+            numMap[nums[i]] = i;
         }
 
         for(int i = 0; i < nums.size(); i++){
-            int tempnum = target - nums[i];
-            // find the tempnum in the numbers and check it is not the same index
-            if(numbers.count(tempnum) && numbers[tempnum] != i){
-                return {i, numbers[tempnum]};
+            int ans = target - nums[i];
+            if(numMap.count(ans) && numMap[ans] != i){
+                return {i, numMap[ans]};
             }
         }
-
         return {};
     }
 };

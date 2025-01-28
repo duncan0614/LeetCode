@@ -8,28 +8,29 @@ using namespace std;
 class Solution {
 public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
+        unordered_map<string, vector<string>> stringGroup;
+        for(auto str: strs){
+            vector<int> charNum(26);
 
-        unordered_map<string, vector<string>> tempMap;
-        for (const auto& s : strs){
-            vector<int> count(26);
-            for (char c : s){
-                count[c - 'a'] += 1;
+            // every char in string
+            for(char c : str){
+                charNum[c - 'a'] += 1;
             }
 
-            string key = to_string(count[0]);
+            string key = to_string(charNum[0]);
             for(int i = 0; i < 26; ++i){
-                key += ',' + to_string(count[i]);
+                key += ',' + to_string(charNum[i]);
             }
 
-            tempMap[key].push_back(s);
+            stringGroup[key].push_back(str);  
+
         }
 
         vector<vector<string>> ret;
-        for(const auto& pair : tempMap){
-            ret.push_back(pair.second);
+        for(auto item : stringGroup){
+            ret.push_back(item.second);
         }
-
-        return ret;
+        return ret; 
     }
 };
 

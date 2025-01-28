@@ -13,22 +13,22 @@ public:
         int cols[9] = {0};
         int squares[9] = {0};
 
-        for (int r = 0; r < 9; r++){
-            for (int c = 0; c < 9; c++){
-                if (board[r][c] == '.'){
+        for(int row = 0; row < 9; row++){
+            for(int col = 0; col < 9; col++){
+
+                if(board[row][col] == '.'){
                     continue;
                 }
 
-                int val = board[r][c] - '1';
-                if ((rows[r] & (1 << val)) ||
-                    (cols[c] & (1 << val)) ||
-                    (squares[(r / 3) * 3 + (c / 3)] & (1 << val))){
-                        return false;
-                    }
-                
-                rows[r] |= (1 << val);
-                cols[c] |= (1 << val);
-                squares[(r / 3) * 3 + (c / 3)] |= (1 << val);
+                int val = board[row][col] - '1';
+                int subSquare = (row / 3) * 3 + col / 3;
+                if(rows[row] & 1 << val || cols[col] & 1 << val || squares[subSquare] & 1 << val){
+                    return false;
+                }
+
+                rows[row] |= 1 << val;
+                cols[col] |= 1 << val;
+                squares[subSquare] |= 1 << val;
             }
         }
 

@@ -6,15 +6,15 @@ using namespace std;
 class Solution {
     public:
         bool hasDuplicate(vector<int>& nums) {
-            unordered_set<int> checkSuccess;
+            unordered_set<int> numSet;
 
-            for (int num : nums){
-                if (checkSuccess.count(num)) {
+            for(const int& num : nums){
+                if(numSet.find(num) != numSet.end()){
                     return true;
                 }
-                checkSuccess.insert(num);
-            }
 
+                numSet.insert(num);
+            }
             return false;
         }
     };
