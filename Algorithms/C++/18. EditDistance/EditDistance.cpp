@@ -33,3 +33,20 @@ public:
         return dp[0][0];
     }
 };
+
+int main() {
+    Solution solution;
+
+    // Test input
+    string word1 = "planning";
+    string word2 = "plannt";
+
+    // Call the function
+    int result = solution.minDistance(word1, word2);
+
+    // Print the output
+    cout << "Min Distance:" << to_string(result) << endl;
+
+
+    return 0;
+}
