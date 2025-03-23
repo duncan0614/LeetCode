@@ -10,6 +10,7 @@ LeetCode
 |11|[Container With Most Water](https://leetcode.com/problems/container-with-most-water/description/) | [C++](./Algorithms/C++/11.ContainerWithMostWater/ContainerWithMostWater.cpp)|Medium|
 |15|[3Sum](https://leetcode.com/problems/3sum/description/) | [C++](./Algorithms/C++/15.3Sum/3Sum.cpp)|Medium|
 |20|[Valid Parentheses](https://leetcode.com/problems/valid-parentheses/description/) | [C++](./Algorithms/C++/20.ValidParentheses/ValidParentheses.cpp)|Easy|
+|36|[Valid Sudoku](https://leetcode.com/problems/valid-sudoku/description/) | [C++](./Algorithms/C++/36.ValidSudoku/ValidSudoku.cpp)|Medium|
 |42|[Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/description/) | [C++](./Algorithms/C++/42.TrappingRainWater/TrappingRainWater.cpp)|Hard|
 |45|[Jump Game II](https://leetcode.com/problems/jump-game-ii/description/) | [C++](./Algorithms/C++/45.JumpGameII/JumpGameII.cpp)|Easy|
 |49|[Group Anagrams](https://leetcode.com/problems/group-anagrams/description/) | [C++](./Algorithms/C++/49.GroupAnagrams/GroupAnagrams.cpp)|Medium|
