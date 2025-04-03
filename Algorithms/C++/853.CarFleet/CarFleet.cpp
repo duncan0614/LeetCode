@@ -25,4 +25,18 @@ public:
         return stack.size();
     }
 };
+
+int main() {
+    Solution solution;
+
+    int target = 10;
+    vector<int> position = {4,1,0,7}, speed = {2,2,1,1};
+
+    // Call the function
+    int result = solution.carFleet(target, position, speed);
+
+    // Print the output
+    cout << "Car Fleet:" << to_string(result) << endl;
+    return 0;
+}
     

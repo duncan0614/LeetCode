@@ -47,3 +47,16 @@ public:
         return maxArea;
     }
 };
+
+int main() {
+    Solution solution;
+
+    vector<int> position = {7,1,7,2,2,4};
+
+    // Call the function
+    int result = solution.largestRectangleArea(position);
+
+    // Print the output
+    cout << "largest Rectangle Area:" << to_string(result) << endl;
+    return 0;
+}

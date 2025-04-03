@@ -46,8 +46,9 @@ int main() {
     cout << "[";
     for (const auto& item : result) {
         for (const auto& c : item) {
-            cout << c << ',';
+            cout << c;
         }
+        cout << ",";
     }
     cout << "]" << endl;
     return 0;
