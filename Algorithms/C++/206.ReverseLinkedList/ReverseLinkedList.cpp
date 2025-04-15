@@ -31,4 +31,38 @@ public:
         return prev;
     }
 };
+
+// Utility function to print linked list
+void printList(ListNode* head) {
+    while (head) {
+        cout << head->val;
+        if (head->next) cout << " -> ";
+        head = head->next;
+    }
+    cout << endl;
+}
+
+int main() {
+    // Construct the linked list: 0 -> 1 -> 2 -> 3
+    ListNode* head = new ListNode(0);
+    head->next = new ListNode(1);
+    head->next->next = new ListNode(2);
+    head->next->next->next = new ListNode(3);
+
+    Solution solution;
+    ListNode* reversed = solution.reverseList(head);
+
+    // Print reversed list
+    cout << "Reversed List: ";
+    printList(reversed);
+
+    // Clean up memory (optional for debugging)
+    while (reversed) {
+        ListNode* next = reversed->next;
+        delete reversed;
+        reversed = next;
+    }
+
+    return 0;
+}
     
